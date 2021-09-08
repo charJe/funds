@@ -1,0 +1,62 @@
+#+title: Funds
+Funds provides portable, purely functional data structures in Common Lisp.
+The array, dictionary, Queue, and Heap are implemented using trees, so "modifying" them is O(log(n)) time and space.
+https://common-lisp.net/project/funds/
+https://common-lisp.net/project/funds/funds.pdf
+
+Below are the exported functions; they should be self explanatory:
+
+* Array
+- MAKE-F-ARRAY
+- F-ARRAY-ELT
+- F-ARRAY-REPLACE
+- F-ARRAY-SIZE
+- F-ARRAY-COUNT
+- MAP-F-ARRAY
+- F-ARRAY-COPY (can also be used for subarray)
+- F-ARRAY-COUNT-IF
+- F-ARRAY-AS-LIST
+
+* Dictionary
+- MAKE-DICTIONARY
+- DICTIONARY-ADD
+- DICTIONARY-REMOVE
+- DICTIONARY-LOOKUP
+- DICTIONARY-SIZE
+- MAP-DICTIONARY
+- DICTIONARY-KEYS
+- DICTIONARY-FROM-ALIST
+- DICTIONARY-AS-ALIST
+
+* Queue
+- MAKE-QUEUE
+- DEQUEUE
+- ENQUEUE
+- QUEUE-FIRST
+- QUEUE-COUNT
+- QUEUE-COUNT-IF
+- QUEUE-EMPTY-P
+- QUEUE-SIZE
+- MAP-QUEUE
+- QUEUE-AS-LIST
+
+* Heap
+- MAKE-HEAP
+- HEAP-INSERT
+- HEAP-REMOVE
+- HEAP-FIRST
+- HEAP-EMPTY-P
+
+* Stack
+- MAKE-STACK
+- STACK-PUSH
+- STACK-POP
+- STACK-TOP
+- STACK-COUNT
+- STACK-COUNT-IF
+- MAP-STACK
+- STACK-EMPTY-P
+- STACK-SIZE
+- STACK-FROM-LIST
+- STACK-AS-LIST
+
