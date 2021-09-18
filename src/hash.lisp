@@ -35,14 +35,14 @@ not map to any value in the returned hash."
                          (tree-remove (dict-tree d) h)
                          (tree-insert (dict-tree d) h new-alist)))))
 
-(defun hash-ref (d k)
+(defun hash-ref (d k &optional default)
   "The value associated with the given key in the given hash.  A second
 value is returned to indicate whether the key is associated with any value or
 is not found."
   (let ((pair (assoc k (tree-find (dict-tree d) (funcall (dict-hash d) k))
                      :test (dict-test d))))
     (if (null pair)
-        (values nil nil)
+        (values default nil)
         (values (cdr pair) t))))
 
 (defun hash-as-alist (d)
