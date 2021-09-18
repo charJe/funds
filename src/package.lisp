@@ -18,6 +18,7 @@
 
 (defpackage :funds
   (:use :cl)
+  (:shadow #:make-array)
   (:export
    #:make-avl-tree
    #:make-binary-tree
@@ -66,9 +67,9 @@
    #:map-stack
 
    #:make-hash
-   #:hash-add
+   #:hash-set
    #:hash-remove
-   #:hash-lookup
+   #:hash-ref
    #:map-hash
    #:hash-keys
    #:hash-as-alist
@@ -76,8 +77,8 @@
    #:hash-size
 
    #:make-array
-   #:array-elt
-   #:array-replace
+   #:array-ref
+   #:array-set
    #:array-size
    #:array-as-list
    #:array-from-list

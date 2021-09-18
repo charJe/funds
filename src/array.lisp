@@ -21,7 +21,7 @@
   "The element at the given index of the given array."
   (tree-find array index :test #'=))
 
-(defun array-replace (array index element)
+(defun array-set (array index element)
   "An array similar to the given array except that index and element are
 associated in the returned array."
   (tree-insert array index element :test #'=))

@@ -8,8 +8,8 @@ Below are the exported functions; they should be self explanatory:
 
 * Array
 - MAKE-ARRAY
-- ARRAY-ELT
-- ARRAY-REPLACE
+- ARRAY-REF
+- ARRAY-SET
 - ARRAY-SIZE
 - ARRAY-COUNT
 - MAP-ARRAY
@@ -19,9 +19,9 @@ Below are the exported functions; they should be self explanatory:
 
 * Hash
 - MAKE-HASH
-- HASH-ADD
+- HASH-SET
 - HASH-REMOVE
-- HASH-LOOKUP
+- HASH-REF
 - HASH-SIZE
 - MAP-HASH
 - HASH-KEYS

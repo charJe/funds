@@ -11,41 +11,41 @@ which defaults to #'sxhash and and tests according to the given test
 function, which defaults to #'eql."
   (make-dict :hash hash :test test :tree (make-avl-tree)))
 
-(defun hash-add (d k v)
-  "A hash similar to the given hash except that k maps to
-v in the returned hash."
-  (let* ((h (funcall (dict-hash d) k))
-         (old-alist (tree-find (dict-tree d) h))
-         (new-alist (acons k v (remove (assoc k old-alist :test (dict-test d))
+(defun hash-set (hash key value)
+  "A hash similar to the given hash except that key maps to
+value in the returned hash."
+  (let* ((h (funcall (dict-hash hash) key))
+         (old-alist (tree-find (dict-tree hash) h))
+         (new-alist (acons key value (remove (assoc key old-alist :test (dict-test hash))
                                        old-alist))))
-    (make-dict :hash (dict-hash d)
-               :test (dict-test d)
-               :tree (tree-insert (dict-tree d) h new-alist))))
+    (make-dict :hash (dict-hash hash)
+               :test (dict-test hash)
+               :tree (tree-insert (dict-tree hash) h new-alist))))
 
-(defun hash-remove (d k)
-  "A hash similar to the given hash, except that k does
+(defun hash-remove (hash key)
+  "A hash similar to the given hash, except that key does
 not map to any value in the returned hash."
-  (let* ((h (funcall (dict-hash d) k))
-         (old-alist (tree-find (dict-tree d) h))
-         (new-alist (remove (assoc k old-alist :test (dict-test d))
+  (let* ((h (funcall (dict-hash hash) key))
+         (old-alist (tree-find (dict-tree hash) h))
+         (new-alist (remove (assoc key old-alist :test (dict-test hash))
                             old-alist)))
-    (make-dict :hash (dict-hash d)
-               :test (dict-test d)
+    (make-dict :hash (dict-hash hash)
+               :test (dict-test hash)
                :tree (if (null new-alist)
-                         (tree-remove (dict-tree d) h)
-                         (tree-insert (dict-tree d) h new-alist)))))
+                         (tree-remove (dict-tree hash) h)
+                         (tree-insert (dict-tree hash) h new-alist)))))
 
-(defun hash-ref (d k &optional default)
+(defun hash-ref (hash key &optional default)
   "The value associated with the given key in the given hash.  A second
 value is returned to indicate whether the key is associated with any value or
 is not found."
-  (let ((pair (assoc k (tree-find (dict-tree d) (funcall (dict-hash d) k))
-                     :test (dict-test d))))
+  (let ((pair (assoc key (tree-find (dict-tree hash) (funcall (dict-hash hash) key))
+                     :test (dict-test hash))))
     (if (null pair)
         (values default nil)
         (values (cdr pair) t))))
 
-(defun hash-as-alist (d)
+(defun hash-as-alist (hash)
   "An alist containing the same key-value pairs as the given hash."
   (labels ((f (tree)
              (if (tree-empty-p tree)
@@ -53,12 +53,12 @@ is not found."
                  (append (f (bt-left tree))
                          (bt-value tree)
                          (f (bt-right tree))))))
-    (f (dict-tree d))))
+    (f (dict-tree hash))))
 
 (defun hash-from-alist (alist &key (test #'eql) (hash #'sxhash))
   (reduce
-   (lambda (d pair)
-     (hash-add d (car pair) (cdr pair)))
+   (lambda (hash pair)
+     (hash-set hash (car pair) (cdr pair)))
    alist
    :initial-value (make-hash :test test :hash hash)))
 
