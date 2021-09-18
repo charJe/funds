@@ -65,23 +65,23 @@
    #:stack-count-if
    #:map-stack
 
-   #:make-dictionary
-   #:dictionary-add
-   #:dictionary-remove
-   #:dictionary-lookup
-   #:map-dictionary
-   #:dictionary-keys
-   #:dictionary-as-alist
-   #:dictionary-from-alist
-   #:dictionary-size
+   #:make-hash
+   #:hash-add
+   #:hash-remove
+   #:hash-lookup
+   #:map-hash
+   #:hash-keys
+   #:hash-as-alist
+   #:hash-from-alist
+   #:hash-size
 
-   #:make-f-array
-   #:f-array-elt
-   #:f-array-replace
-   #:f-array-size
-   #:f-array-as-list
-   #:f-array-from-list
-   #:f-array-count
-   #:f-array-count-if
-   #:map-f-array
-   #:f-array-copy))
+   #:make-array
+   #:array-elt
+   #:array-replace
+   #:array-size
+   #:array-as-list
+   #:array-from-list
+   #:array-count
+   #:array-count-if
+   #:map-array
+   #:array-copy))
