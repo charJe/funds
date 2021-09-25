@@ -47,4 +47,5 @@
      (:file "heap-first")))
    (:file "vector")
    (:file "hash")
+   (:file "hash-set")
    (:file "queue")))

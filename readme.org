@@ -28,6 +28,18 @@ Below are the exported functions; they should be self explanatory:
 - HASH-FROM-ALIST
 - HASH-AS-ALIST
 
+** Hash Set
+- MAKE-HASH
+- HASH-SET
+- HASH-REMOVE
+- HASH-REF
+- HASH-SIZE
+- HASH-FROM-LIST
+- HASH-AS-LIST
+- HASH-UNION
+- HASH-DIFFERENCE
+- HASH-INTERSECTION
+
 * Queue
 - MAKE-QUEUE
 - DEQUEUE
@@ -59,4 +71,3 @@ Below are the exported functions; they should be self explanatory:
 - STACK-SIZE
 - STACK-FROM-LIST
 - STACK-AS-LIST
-

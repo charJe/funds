@@ -75,6 +75,12 @@
    #:hash-from-alist
    #:hash-size
 
+   #:hash-from-list
+   #:hash-as-list
+   #:hash-union
+   #:hash-difference
+   #:hash-intersection
+
    #:make-vector
    #:vector-ref
    #:vector-set

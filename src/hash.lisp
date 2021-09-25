@@ -11,7 +11,7 @@ which defaults to #'sxhash and and tests according to the given test
 function, which defaults to #'eql."
   (make-dict :hash hash :test test :tree (make-avl-tree)))
 
-(defun hash-set (hash key value)
+(defun hash-set (hash key &optional (value t))
   "A hash similar to the given hash except that key maps to
 value in the returned hash."
   (let* ((h (funcall (dict-hash hash) key))
@@ -74,6 +74,9 @@ result of the each function call is the new value."
 
 (defun hash-keys (hash)
   (mapcar #'car (hash-as-alist hash)))
+
+(defun hash-values (hash)
+  (mapcar #'cdr (hash-as-alist hash)))
 
 (defun hash-size (hash)
   (tree-weight (dict-tree hash)))
