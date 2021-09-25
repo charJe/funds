@@ -1,21 +1,21 @@
 #+title: Funds
 Funds provides portable, purely functional data structures in Common Lisp.
-The array, hash, Queue, and Heap are implemented using trees, so "modifying" them is O(log(n)) time and space.
+The vector, hash, Queue, and Heap are implemented using trees, so "modifying" them is O(log(n)) time and space.
 https://common-lisp.net/project/funds/
 https://common-lisp.net/project/funds/funds.pdf
 
 Below are the exported functions; they should be self explanatory:
 
-* Array
-- MAKE-ARRAY
-- ARRAY-REF
-- ARRAY-SET
-- ARRAY-SIZE
-- ARRAY-COUNT
-- MAP-ARRAY
-- ARRAY-COPY (can also be used for subarray)
-- ARRAY-COUNT-IF
-- ARRAY-AS-LIST
+* Vector
+- MAKE-VECTOR
+- VECTOR-REF
+- VECTOR-SET
+- VECTOR-SIZE
+- VECTOR-COUNT
+- MAP-VECTOR
+- VECTOR-COPY (can also be used for subvector)
+- VECTOR-COUNT-IF
+- VECTOR-AS-LIST
 
 * Hash
 - MAKE-HASH

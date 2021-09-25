@@ -18,7 +18,6 @@
 
 (defpackage :funds
   (:use :cl)
-  (:shadow #:make-array)
   (:export
    #:make-avl-tree
    #:make-binary-tree
@@ -76,13 +75,13 @@
    #:hash-from-alist
    #:hash-size
 
-   #:make-array
-   #:array-ref
-   #:array-set
-   #:array-size
-   #:array-as-list
-   #:array-from-list
-   #:array-count
-   #:array-count-if
-   #:map-array
-   #:array-copy))
+   #:make-vector
+   #:vector-ref
+   #:vector-set
+   #:vector-size
+   #:vector-as-list
+   #:vector-from-list
+   #:vector-count
+   #:vector-count-if
+   #:map-vector
+   #:vector-copy))

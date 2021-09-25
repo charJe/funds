@@ -45,6 +45,6 @@
      (:file "heap-insert")
      (:file "heap-remove")
      (:file "heap-first")))
-   (:file "array")
+   (:file "vector")
    (:file "hash")
    (:file "queue")))
